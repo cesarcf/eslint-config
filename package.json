@@ -10,13 +10,6 @@
 		"prettier.config.js"
 	],
 	"peerDependencies": {
-		"babel-eslint": ">=10.1.0",
-		"eslint": ">=7.12.0",
-		"eslint-plugin-import": ">=2.22.0",
-		"eslint-plugin-jest": ">=24.1.0",
-		"eslint-plugin-react": ">=7.21.0",
-		"eslint-plugin-react-hooks": ">=4.2.0",
-		"prettier": ">=2.1.0",
 		"jest": ">=26.6.0",
 		"react": ">=16.12.0"
 	},
