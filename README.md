@@ -16,19 +16,26 @@ npm install --save-dev @cesarcf/eslint-config
 
 Add the following to your `.eslintrc.js` file:
 
-```json
-{
-  "extends": "@cesarcf"
+```js
+module.exports = {
+  extends: '@cesarcf'
 }
 ```
+Add the following to your `prettier.config.js` file:
 
-If you need to override a rule, your `.eslintrc.js` file should look like the example below. All shared rules will be used, but `eqeqeq` will be turned off.
+```js
+module.exports = require('@cesarcf/eslint-config/prettier.config')
+```
 
-```json
-{
-  "extends": "@cesarcf",
-  "rules": {
-    "eqeqeq": "off"
+If you need to override a rule, your `.eslintrc.js` file should look like the example below. 
+All shared rules will be used, but `react/prop-types` will be turned on.
+
+```js
+module.exports = {
+  extends: '@cesarcf',
+  rules: {
+    'react/prop-types': 'on'
+    ...
   }
 }
 ```
