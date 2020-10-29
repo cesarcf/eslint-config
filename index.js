@@ -80,13 +80,6 @@ module.exports = {
 		serviceworker: true
 	},
 
-	globals: {
-		__DEVELOPMENT__: true,
-		shallow: true,
-		render: true,
-		mount: true
-	},
-
 	settings: {
 		react: {
 			version: 'detect'
