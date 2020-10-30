@@ -1,3 +1,6 @@
+const { getWpModuleResolver } = require('./utils')
+const { wpAlias, wpExtensions } = getWpModuleResolver()
+
 module.exports = {
 	root: true,
 	parser: 'babel-eslint',
@@ -18,8 +21,7 @@ module.exports = {
 		'plugin:jest/style',
 
 		/** eslint-plugin-import */
-		'plugin:import/errors',
-		'plugin:import/warnings',
+		'plugin:import/recommended',
 
 		/** eslint-plugin-react */
 		'plugin:react/recommended',
@@ -62,9 +64,31 @@ module.exports = {
 		'jest/valid-expect': 'error',
 
 		/** eslint-plugin-import */
-		'import/extensions': 0,
-		'import/order': ['error', { 'newlines-between': 'always' }],
-		'import/prefer-default-export': 0,
+		// "import/newline-after-import": ["error", { "count": 4 }],
+		'import/order': [
+			'error',
+			{
+				groups: ['builtin', 'external', 'internal'],
+				pathGroups: [
+					{
+						pattern: 'react**',
+						group: 'external',
+						position: 'before'
+					},
+					{
+						pattern: '@**/**',
+						group: 'external',
+						position: 'after'
+					}
+				],
+				pathGroupsExcludedImportTypes: ['react**'],
+				'newlines-between': 'never',
+				alphabetize: {
+					order: 'asc',
+					caseInsensitive: true
+				}
+			}
+		],
 
 		/** eslint-plugin-react-hooks */
 		'react-hooks/rules-of-hooks': 'error',
@@ -83,6 +107,13 @@ module.exports = {
 	settings: {
 		react: {
 			version: 'detect'
+		},
+		/** eslint-import-resolver-alias */
+		'import/resolver': {
+			alias: {
+				map: wpAlias,
+				extensions: wpExtensions
+			}
 		}
 	}
 }
