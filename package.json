@@ -13,7 +13,8 @@
 	],
 	"files": [
 		"index.js",
-		"prettier.config.js"
+		"prettier.config.js",
+		"utils.js"
 	],
 	"peerDependencies": {
 		"jest": ">=26.6.0",
@@ -23,6 +24,7 @@
 		"babel-eslint": "~10.1.0",
 		"eslint": "~7.12.1",
 		"eslint-config-prettier": "~6.15.0",
+		"eslint-import-resolver-alias": "~1.1.2",
 		"eslint-plugin-import": "~2.22.1",
 		"eslint-plugin-jest": "~24.1.0",
 		"eslint-plugin-react": "~7.21.5",
