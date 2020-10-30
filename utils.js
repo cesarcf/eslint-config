@@ -1,5 +1,5 @@
 function getWpModuleResolver() {
-	const wpConfig = require('./webpack.config')
+	const wpConfig = require(`${process.env.PWD}/webpack.config`)
 	const {
 		resolve: { alias, extensions: wpExtensions }
 	} = wpConfig({ NODE_ENV: 'development' })
