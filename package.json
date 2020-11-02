@@ -1,6 +1,6 @@
 {
   "name": "@cesarcf/eslint-config",
-  "version": "0.1.6",
+  "version": "1.0.0",
   "description": "esLint && prettier Configuration",
   "main": "index.js",
   "author": "Cesar Carbajo <cesar.carbajo.ferrero@gmail.com>",
@@ -13,8 +13,7 @@
   ],
   "files": [
     "index.js",
-    "prettier.config.js",
-    "utils.js"
+    "prettier.config.js"
   ],
   "peerDependencies": {
     "jest": ">=26.6.0",
