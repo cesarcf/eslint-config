@@ -1,8 +1,4 @@
-const { getWpModuleResolver } = require('./utils')
-const { wpAlias, wpExtensions } = getWpModuleResolver()
-
 module.exports = {
-  root: true,
   parser: 'babel-eslint',
   parserOptions: {
     ecmaVersion: 2020,
@@ -13,7 +9,7 @@ module.exports = {
   },
 
   extends: [
-    /** Rules recommended for Javascript */
+    /** eslint */
     'eslint:recommended',
 
     /** eslint-plugin-jest */
@@ -33,37 +29,78 @@ module.exports = {
     'eslint-config-prettier'
   ],
 
-  // Rules of ESLint (overwrite extends rules)
   rules: {
+    /***************************/
+    /** eslint */
+    /***************************/
     strict: ['error', 'never'],
-    'no-irregular-whitespace': 'warn',
-    'react/display-name': 'off',
-    'react/prop-types': 'off',
     'no-unused-vars': 'off',
-    'no-debugger': 'warn',
     'no-prototype-builtins': 'off',
-
-    /** eslint-plugin-jest */
-    'jest/consistent-test-it': [
-      'error',
+    'no-debugger': 'warn',
+    'no-console': ['warn', { allow: ['warn', 'error'] }],
+    'no-alert': 'warn',
+    'no-template-curly-in-string': 'warn',
+    'block-scoped-var': 'warn',
+    'default-case': 'warn',
+    'default-case-last': 'warn',
+    eqeqeq: 'warn',
+    'guard-for-in': 'warn',
+    'no-implicit-coercion': 'warn',
+    'no-multi-spaces': 'warn',
+    'no-tabs': 'warn',
+    'no-duplicate-imports': 'warn',
+    'object-shorthand': ['warn', 'always'],
+    'prefer-arrow-callback': 'warn',
+    'prefer-const': 'warn',
+    'prefer-destructuring': [
+      'warn',
       {
-        fn: 'test',
-        withinDescribe: 'test'
+        VariableDeclarator: {
+          array: false,
+          object: true
+        },
+        AssignmentExpression: {
+          array: true,
+          object: true
+        }
+      },
+      {
+        enforceForRenamedProperties: false
       }
     ],
-    'jest/expect-expect': 'error',
-    'jest/no-disabled-tests': 'warn',
-    'jest/no-focused-tests': 'warn',
-    'jest/no-identical-title': 'error',
-    'jest/no-jest-import': 'error',
-    'jest/no-large-snapshots': ['warn', { maxSize: 300 }],
-    'jest/prefer-strict-equal': 'error',
-    'jest/prefer-to-be-null': 'error',
-    'jest/prefer-to-be-undefined': 'error',
-    'jest/prefer-to-have-length': 'error',
-    'jest/valid-expect': 'error',
+    'prefer-rest-params': 'warn',
+    'prefer-template': 'warn',
+    'rest-spread-spacing': ['warn', 'never'],
 
+    /***************************/
+    /** eslint-plugin-react */
+    /***************************/
+    'react/prefer-stateless-function': 'warn',
+    'react/prop-types': ['warn', { skipUndeclared: true }],
+    'react/jsx-key': ['warn', { checkFragmentShorthand: true }],
+    'react/no-array-index-key': 0 /** Poner a 2 */,
+    'react/jsx-fragments': 'warn',
+    'react/jsx-no-bind': 0 /** Poner a 1 */,
+    'react/no-deprecated': 'warn',
+    'react/require-render-return': 'warn',
+    'react/jsx-no-target-blank': 'warn',
+    'react/void-dom-elements-no-children': 'warn',
+    'react/display-name': 'off',
+
+    /***************************/
+    /** eslint-plugin-jest */
+    /***************************/
+    'jest/consistent-test-it': ['error', { fn: 'test', withinDescribe: 'test' }],
+    'jest/expect-expect': ['error', { assertFunctionNames: ['expect'] }],
+    'jest/lowercase-name': ['warn', { ignore: ['describe'] }],
+    'jest/no-focused-tests': 'warn',
+    'jest/prefer-to-be-null': 'warn',
+    'jest/prefer-to-be-undefined': 'warn',
+    'prefer-todo': 'warn',
+
+    /***************************/
     /** eslint-plugin-import */
+    /***************************/
     // "import/newline-after-import": ["error", { "count": 4 }],
     'import/order': [
       'error',
@@ -90,7 +127,9 @@ module.exports = {
       }
     ],
 
+    /***************************/
     /** eslint-plugin-react-hooks */
+    /***************************/
     'react-hooks/rules-of-hooks': 'error',
     'react-hooks/exhaustive-deps': 'warn'
   },
@@ -107,13 +146,6 @@ module.exports = {
   settings: {
     react: {
       version: 'detect'
-    },
-    /** eslint-import-resolver-alias */
-    'import/resolver': {
-      alias: {
-        map: wpAlias,
-        extensions: wpExtensions
-      }
     }
   }
 }
