@@ -96,7 +96,6 @@ module.exports = {
     'jest/no-focused-tests': 'warn',
     'jest/prefer-to-be-null': 'warn',
     'jest/prefer-to-be-undefined': 'warn',
-    'prefer-todo': 'warn',
 
     /***************************/
     /** eslint-plugin-import */
