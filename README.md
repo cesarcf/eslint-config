@@ -27,15 +27,27 @@ Add the following to your `prettier.config.js` file:
 module.exports = require('@cesarcf/eslint-config/prettier.config')
 ```
 
-If you need to override a rule, your `.eslintrc.js` file should look like the example below. 
-All shared rules will be used, but `react/prop-types` will be turned on.
-
+If you need to override a rule, your `.eslintrc.js` file should look like the example below.
 ```js
 module.exports = {
   extends: '@cesarcf',
-  rules: {
-    'react/prop-types': 'on'
-    ...
+  root: true,
+  settings: {
+    react: {
+      version: 'detect'
+    },
+    /** eslint-import-resolver-alias */
+    'import/resolver': {
+      alias: {
+        map: [
+          ['components', './src/components/'],
+          ['assets', './src/assets/'],
+          ['utils', './src/utils/'],
+          ['test', './src/test/']
+        ],
+        extensions: ['.js', '.jsx']
+      }
+    }
   }
 }
 ```
