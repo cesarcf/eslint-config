@@ -91,7 +91,7 @@ module.exports = {
     /** eslint-plugin-jest */
     /***************************/
     'jest/consistent-test-it': ['error', { fn: 'test', withinDescribe: 'test' }],
-    'jest/expect-expect': ['error', { assertFunctionNames: ['expect'] }],
+    'jest/expect-expect': 'off',
     'jest/lowercase-name': ['warn', { ignore: ['describe'] }],
     'jest/no-focused-tests': 'warn',
     'jest/prefer-to-be-null': 'warn',
@@ -148,5 +148,19 @@ module.exports = {
     },
     /** eslint-import-resolver-webpack */
     'import/resolver': 'webpack'
-  }
+  },
+
+  overrides: [
+    {
+      /** eslint-import-resolver-jest */
+      files: ['**/__tests__/**/*.js', '*.test.js'],
+      settings: {
+        'import/resolver': {
+          jest: {
+            jestConfigFile: path.join(process.cwd(), 'jest.config.js')
+          }
+        }
+      }
+    }
+  ]
 }
