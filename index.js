@@ -145,6 +145,8 @@ module.exports = {
   settings: {
     react: {
       version: 'detect'
-    }
+    },
+    /** eslint-import-resolver-webpack */
+    'import/resolver': 'webpack'
   }
 }
