@@ -36,7 +36,6 @@ module.exports = {
     react: {
       version: 'detect'
     },
-    /** eslint-import-resolver-alias */
     'import/resolver': {
       alias: {
         map: [
