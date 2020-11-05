@@ -18,6 +18,9 @@ module.exports = {
     'plugin:jest/recommended',
     'plugin:jest/style',
 
+    /** eslint-plugin-jest-dom */
+    'plugin:jest-dom/recommended',
+
     /** eslint-plugin-cypress */
     'plugin:cypress/recommended',
 
