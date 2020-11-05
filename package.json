@@ -1,6 +1,6 @@
 {
   "name": "@cesarcf/eslint-config",
-  "version": "1.3.1",
+  "version": "1.4.0",
   "description": "esLint && prettier Configuration",
   "main": "index.js",
   "author": "Cesar Carbajo <cesar.carbajo.ferrero@gmail.com>",
