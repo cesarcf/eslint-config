@@ -159,7 +159,7 @@ module.exports = {
   overrides: [
     {
       /** eslint-plugin-jest */
-      files: ['**/(e2e|integration)/**/*.js'],
+      files: ['**/cypress/**/*.js'],
       rules: {
         'jest/consistent-test-it': ['error', { fn: 'it', withinDescribe: 'it' }]
       }
