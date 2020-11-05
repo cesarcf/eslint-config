@@ -18,6 +18,9 @@ module.exports = {
     'plugin:jest/recommended',
     'plugin:jest/style',
 
+    /** eslint-plugin-cypress */
+    'plugin:cypress/recommended',
+
     /** eslint-plugin-import */
     'plugin:import/recommended',
 
@@ -140,6 +143,7 @@ module.exports = {
     node: true,
     es2020: true,
     jest: true,
+    'cypress/globals': true,
     worker: true,
     serviceworker: true
   },
@@ -153,6 +157,13 @@ module.exports = {
   },
 
   overrides: [
+    {
+      /** eslint-plugin-jest */
+      files: ['**/(e2e|integration)/**/*.js'],
+      rules: {
+        'jest/consistent-test-it': ['error', { fn: 'it', withinDescribe: 'it' }]
+      }
+    },
     {
       /** eslint-import-resolver-jest */
       files: ['**/__tests__/**/*.js', '*.test.js'],
