@@ -33,6 +33,9 @@ module.exports = {
     /** eslint-plugin-react-hooks */
     'plugin:react-hooks/recommended',
 
+    /** eslint-plugin-jsx-a11y */
+    'plugin:jsx-a11y/recommended',
+
     /** eslint-config-prettier : Avoid conflict with Prettier.*/
     'eslint-config-prettier'
   ],
