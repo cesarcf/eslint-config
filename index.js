@@ -138,6 +138,11 @@ module.exports = {
     ],
 
     /***************************/
+    /** eslint-plugin-jsx-a11y */
+    /***************************/
+    'jsx-a11y/no-onchange': 'off',
+
+    /***************************/
     /** eslint-plugin-react-hooks */
     /***************************/
     'react-hooks/rules-of-hooks': 'error',
