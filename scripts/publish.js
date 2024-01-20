@@ -11,6 +11,6 @@ const exec = util.promisify(require("child_process").exec);
 
   console.log(`🛠️ Publishing @cesarcf/eslint-config release ${packageJson.version} ...`);
 
-  await exec(`npm publish ./dist --verbose --access public`);
+  await exec(`npm publish ./dist --access public`);
   console.log(`🛠️ @cesarcf/eslint-config have published a new version (${packageJson.version})!`);
 })();
