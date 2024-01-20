@@ -1,25 +1,21 @@
-/************************************************************
- * Javascript Style-guide ESLint rules         *
- ************************************************************/
 const prettierConfig = require("./.prettierrc.js");
 
+/****************************************************
+  basedOn: 
+  "https://prettier.io/docs/en/comparison.html",
+  "https://google.github.io/styleguide/jsguide.html#naming",
+  "https://github.com/suchipi/eslint-config-unobtrusive#rationale"
+************************************************************/
 module.exports = {
-  /****************************************************
-    basedOn: 
-        "https://prettier.io/docs/en/comparison.html",
-        "https://google.github.io/styleguide/jsguide.html#naming",
-        "https://github.com/suchipi/eslint-config-unobtrusive#rationale"
-    ************************************************************/
-
   env: {
     node: true, // prevents errors: "require/module is not defined  no-undef"
     "jest/globals": true,
   },
 
   settings: {
-    "jest": {
-      "version": "detect"
-    }
+    jest: {
+      version: "detect",
+    },
   },
 
   // We add new rule categories to eslint via plugins
@@ -67,7 +63,6 @@ module.exports = {
      *                   NAMING-CONVENTIONS RULES END                     *
      *********************************************************************/
 
-
     /**********************************************************************
      *             Recommended rules for jest tests                       *
      *    https://github.com/jest-community/eslint-plugin-jest#rules      *
@@ -100,6 +95,5 @@ module.exports = {
     "jest/valid-describe-callback": "error",
     "jest/valid-expect": "error",
     "jest/valid-title": "error",
-  }
-
+  },
 };
