@@ -78,8 +78,6 @@ const saveRulesToFile = async (distFile, inputConfig) => {
   };
 
   const fileContent = "module.exports = " + JSON.stringify(desiredConfig, null, 2);
-  const comment = `// this file was auto-generated from the project's ${inputConfig} via ./scripts/package.js`;
-  await fs.writeFile(distFile, comment + "\n");
   console.log("Created file " + distFile);
 
   await fs.appendFile(distFile, fileContent);
